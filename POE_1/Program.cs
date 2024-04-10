@@ -6,6 +6,7 @@ namespace POE_1
     {
         static void Main(string[] args)
         {
+
             Recipe newRecipe = Recipe.CreateRecipe();
 
             Console.WriteLine("\n*********************************************************");
@@ -31,18 +32,40 @@ namespace POE_1
             if (userInput.ToLower() == "yes")
 
             {
-                
+
                 newRecipe.ResetQuantity();
                 Console.WriteLine("Quantities have been reset to their original values.");
-
+                Console.WriteLine("\n*********************************************************");
                 Console.WriteLine("\nUpdated recipe details:");
+                Console.WriteLine("\n*********************************************************");
                 Recipe.DisplayRecipeDetails(newRecipe);
 
             }
             else
             {
                 Console.WriteLine("Quantities will not be reset.");
-               
+
+            }
+
+            Console.WriteLine("Do you want to clear the Recipe? (yes/no)");
+
+            // Get user input
+            string clearInput = Console.ReadLine();
+
+            if (clearInput.ToLower() == "yes")
+            {
+                newRecipe.Clear();
+                Console.WriteLine("Recipe has been cleared.");
+            }
+            else
+            {
+                // Add a new recipe
+                Console.WriteLine("\nEnter a new recipe:");
+                newRecipe = Recipe.CreateRecipe();
+
+                // Display the new recipe
+                Console.WriteLine("\nNew Recipe Details:");
+                Recipe.DisplayRecipeDetails(newRecipe);
             }
         }
     }

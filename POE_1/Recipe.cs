@@ -99,6 +99,14 @@ namespace POE_1
             {
                 ingredient.Quantity = ingredient.InitialQuantity; // Reset to initial quantity
             }
+
+        }
+        public void Clear()
+        {
+            Name = "";
+            Description = "";
+            Ingredients = null;
+            Steps = null;
         }
     }
 }
