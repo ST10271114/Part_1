@@ -22,6 +22,28 @@ namespace POE_1
             // Display scaled recipe
             Console.WriteLine($"\nScaled Recipe (Factor: {factor}):");
             Recipe.DisplayRecipeDetails(newRecipe);
+
+            Console.WriteLine("Do you want to reset the quantities to their original values? (yes/no)");
+
+            // Get user input
+            string userInput = Console.ReadLine();
+
+            if (userInput.ToLower() == "yes")
+
+            {
+                
+                newRecipe.ResetQuantity();
+                Console.WriteLine("Quantities have been reset to their original values.");
+
+                Console.WriteLine("\nUpdated recipe details:");
+                Recipe.DisplayRecipeDetails(newRecipe);
+
+            }
+            else
+            {
+                Console.WriteLine("Quantities will not be reset.");
+               
+            }
         }
     }
 }

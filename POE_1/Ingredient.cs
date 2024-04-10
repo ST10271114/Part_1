@@ -10,8 +10,8 @@ namespace POE_1
     {
         public string Name { get; set; }
         public double Quantity { get; set; }
+        public double InitialQuantity { get; set; } // Store the initial quantity
         public string Unit { get; set; }
-
     }
 
 

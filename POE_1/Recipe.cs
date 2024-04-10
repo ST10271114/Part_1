@@ -37,7 +37,7 @@ namespace POE_1
 
             for (int i = 0; i < numIngredients; i++)
             {
-                Ingredients ingredient = new Ingredients();
+                Ingredients ingredient = new Ingredients(); ;
 
                 Console.Write($"\nIngredient {i + 1} Name: ");
                 ingredient.Name = Console.ReadLine();
@@ -47,6 +47,8 @@ namespace POE_1
 
                 Console.Write($"\nUnit of measurement for {ingredient.Name}: ");
                 ingredient.Unit = Console.ReadLine();
+
+                ingredient.InitialQuantity = ingredient.Quantity; // Store initial quantity
 
                 recipe.Ingredients[i] = ingredient;
             }
@@ -82,11 +84,20 @@ namespace POE_1
                 Console.WriteLine($"Step {i + 1}: {recipe.Steps[i]}");
             }
         }
+
         public void ScaleRecipe(double factor)
         {
             foreach (var ingredient in Ingredients)
             {
                 ingredient.Quantity *= factor;
+            }
+        }
+
+        public void ResetQuantity()
+        {
+            foreach (var ingredient in Ingredients)
+            {
+                ingredient.Quantity = ingredient.InitialQuantity; // Reset to initial quantity
             }
         }
     }
