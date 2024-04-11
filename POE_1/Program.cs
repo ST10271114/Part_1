@@ -24,7 +24,7 @@ namespace POE_1
             Console.WriteLine($"\nScaled Recipe (Factor: {factor}):");
             Recipe.DisplayRecipeDetails(newRecipe);
 
-            Console.WriteLine("Do you want to reset the quantities to their original values? (yes/no)");
+            Console.WriteLine("Do you want to reset the quantities to their original values? (yes or no)");
 
             // Get user input
             string userInput = Console.ReadLine();
@@ -35,6 +35,7 @@ namespace POE_1
 
                 newRecipe.ResetQuantity();
                 Console.WriteLine("Quantities have been reset to their original values.");
+                //Display the updated recipe after user has reset the values
                 Console.WriteLine("\n*********************************************************");
                 Console.WriteLine("\nUpdated recipe details:");
                 Console.WriteLine("\n*********************************************************");
@@ -47,7 +48,7 @@ namespace POE_1
 
             }
 
-            Console.WriteLine("Do you want to clear the Recipe? (yes/no)");
+            Console.WriteLine("Do you want to clear the Recipe? (yes or no)");
 
             // Get user input
             string clearInput = Console.ReadLine();
@@ -55,17 +56,22 @@ namespace POE_1
             if (clearInput.ToLower() == "yes")
             {
                 newRecipe.Clear();
-                Console.WriteLine("Recipe has been cleared.");
-            }
-            else
-            {
-                // Add a new recipe
+
+              
+                // Prompt the user to add a new recipe
+
                 Console.WriteLine("\nEnter a new recipe:");
                 newRecipe = Recipe.CreateRecipe();
 
                 // Display the new recipe
                 Console.WriteLine("\nNew Recipe Details:");
                 Recipe.DisplayRecipeDetails(newRecipe);
+            }
+            else
+            {
+                // If user inputs "no" then the Recipe will not be cleared and it will not ask them to add a new recipe
+
+                Console.WriteLine("Recipe not cleared ");
             }
         }
     }
