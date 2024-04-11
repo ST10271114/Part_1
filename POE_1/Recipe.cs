@@ -1,4 +1,4 @@
-﻿``````````````````````````````````````````````````````using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,8 +48,9 @@ namespace POE_1
                 Console.Write($"\nUnit of measurement for {ingredient.Name}: ");
                 ingredient.Unit = Console.ReadLine();
 
-                ingredient.InitialQuantity = ingredient.Quantity; // Store initial quantity
+                // Store the initial quantity
 
+                ingredient.InitialQuantity = ingredient.Quantity;
                 recipe.Ingredients[i] = ingredient;
             }
 
@@ -93,6 +94,7 @@ namespace POE_1
             }
         }
 
+        // Reset the quantities of ingredients to their initial values
         public void ResetQuantity()
         {
             foreach (var ingredient in Ingredients)
@@ -101,6 +103,7 @@ namespace POE_1
             }
 
         }
+        // Method to clear and ask the user to insert a new recipe
         public void Clear()
         {
             Name = "";
