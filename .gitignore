@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /POE_1/Program.cs
 /POE_1/Ingredient.cs
+/POE_1/Recipe.cs
