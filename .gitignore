@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /POE_1/Program.cs
+/POE_1/Ingredient.cs
