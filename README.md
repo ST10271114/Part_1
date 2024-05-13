@@ -7,7 +7,7 @@
 - Based on the software type, choose the appropriate Microsoft web platform that is suitable for the file:
 - For .NET applications: You can use Visual Studio IDE (Integrated Development Environment) for compiling and running .NET applications. Download and install Visual Studio from the official Microsoft website.
 - For ASP.NET websites: You can use Visual Studio or Visual Studio Code for compiling and running ASP.NET websites. Install the necessary tools and extensions for ASP.NET development.
-
+ 
 3. Open the software in the selected Microsoft web platform:
 - Launch Visual Studio or Visual Studio Code.
 - Open the project or solution file of the software you unzipped in step 1.
